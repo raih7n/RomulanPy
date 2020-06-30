@@ -1,9 +1,6 @@
-import os
+import os, errno
 import sys
 
-import errno
-
-ERROR_INVALID_NAME = 123
 
 def is_pathname_valid(pathname: str) -> bool:
     try:
@@ -23,7 +20,7 @@ def is_pathname_valid(pathname: str) -> bool:
                 os.lstat(root_dirname + pathname_part)
             except OSError as exc:
                 if hasattr(exc, 'winerror'):
-                    if exc.winerror == ERROR_INVALID_NAME:
+                    if exc.winerror == 123: # ERROR_INVALID_NAME
                         return False
                 elif exc.errno in {errno.ENAMETOOLONG, errno.ERANGE}:
                     return False
