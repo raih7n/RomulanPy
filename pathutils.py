@@ -20,7 +20,7 @@ def is_pathname_valid(pathname: str) -> bool:
                 os.lstat(root_dirname + pathname_part)
             except OSError as exc:
                 if hasattr(exc, 'winerror'):
-                    if exc.winerror == 123: # ERROR_INVALID_NAME
+                    if exc.winerror == 123 or exc.winerror == 2: # ERROR_INVALID_NAME, ERROR_FILE_NOT_FOUND
                         return False
                 elif exc.errno in {errno.ENAMETOOLONG, errno.ERANGE}:
                     return False
