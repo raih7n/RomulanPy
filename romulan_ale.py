@@ -12,7 +12,7 @@ from rich.console import Console
 import pathutils
 
 def scan_file(path: str):
-    console = Console(width=40)
+    console = Console(width=45)
     driver = pefile.PE(path)
 
     console.print("Checking {}...".format(os.path.basename(path)), end='', justify="left")
