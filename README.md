@@ -1,6 +1,6 @@
 # Romulan Py
 
-### Python version of Romulan Ale
+### Windows driver export scanner
 
 Scans a driver for exports typically used for exploiting
 
