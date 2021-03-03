@@ -2,7 +2,7 @@
 
 ### Windows driver export scanner
 
-Scans a driver for exports typically used for exploiting
+Scans a driver for a few exports commonly assocaited with arbitrary physical memory access exposure
 
 Check a single driver
 
@@ -22,5 +22,5 @@ Checking ssadserd.sys...                                      [  OK  ]
 Checking ssadwhnt.sys...                                      [  OK  ]
 Checking ssadadb.sys...                                       [  OK  ]
 Checking ssadbus.sys...                                       [ FAIL ]
-Found MmMapLockedPages @ 0x2997c                                             
+Found MmMapIoSpace @ 0x2997c                                             
 ~~~

@@ -19,10 +19,8 @@ def scan_file(path: str):
     searched_imports = {
         "MmMapIoSpace",
         "MmMapIoSpaceEx",
-        "MmMapLockedPages",
-        "MmMapLockedPagesSpecifyCache",
-        "MmMapLockedPagesWithReservedMapping",
-        "MmGetPhysicalAddress"}
+        "MmGetPhysicalAddress",
+        "ZwMapViewOfSection"}
 
     ntoskrnl_exe = [n for n in driver.DIRECTORY_ENTRY_IMPORT
                     if n.dll.decode('utf-8') == 'ntoskrnl.exe']
